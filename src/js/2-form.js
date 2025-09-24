@@ -5,6 +5,8 @@ let formData = {
   message: '',
 };
 
+console.log('formData: ', formData);
+
 fillForm();
 
 formEl.addEventListener('input', onChange);
@@ -26,7 +28,7 @@ function onSubmit(e) {
   if (isEmptyFields()) {
     return alert('Please fill in all fields.');
   }
-  console.log('formData: ', formData);
+  console.log('formData: ', { ...formData });
   clearLS();
   formEl.reset();
 }
@@ -52,7 +54,7 @@ function fillForm() {
 function clearLS() {
   formData.email = '';
   formData.message = '';
-  localStorage.setItem(KEY, formData);
+  localStorage.setItem(KEY, JSON.stringify(formData));
   localStorage.removeItem(KEY);
 }
 
