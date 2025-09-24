@@ -5,8 +5,6 @@ let formData = {
   message: '',
 };
 
-console.log('formData: ', formData);
-
 fillForm();
 
 formEl.addEventListener('input', onChange);
